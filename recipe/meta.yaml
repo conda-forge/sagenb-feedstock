@@ -1,7 +1,7 @@
 {% set name = "sagenb" %}
-{% set version = "1.0.3" %}
-{% set hash = "416c8c53629e8100d6f485a07d08c55e07f93fcbe21aa67506802c15ab271b38" %}
-{% set build = 1 %}
+{% set version = "1.0.4" %}
+{% set hash = "440033b213bcf55146efb2f3c124a58332271e1b595b2e220174b82d989b104f" %}
+{% set build = 0 %}
 
 package:
   name: {{ name|lower }}

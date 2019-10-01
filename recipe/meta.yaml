@@ -1,7 +1,6 @@
 {% set name = "sagenb" %}
 {% set version = "1.1.2" %}
 {% set hash = "2c55438fb9a3ef88994ed385e2e9d88b11283853705fec11235a4f51a34aa04c" %}
-{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: {{ build }}
+  number: 2
   script: python -m pip install --no-deps --ignore-installed . --verbose
 
 requirements:
@@ -28,7 +27,7 @@ requirements:
     - flask-oldsessions >=0.10
     - flask-openid
     - flask-autoindex
-    - flask-babel 0.9
+    - flask-babel >=0.9,<1.0
 
 test:
   commands:

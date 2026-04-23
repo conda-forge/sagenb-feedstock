@@ -12,16 +12,16 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: python -m pip install --no-deps --ignore-installed . --verbose
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
 
   run:
-    - python
+    - python >={{ python_min }}
     - twisted >=11.0.0
     - flask >=0.10.1,<0.12
     - flask-oldsessions >=0.10
@@ -30,6 +30,8 @@ requirements:
     - flask-babel >=0.9,<1.0
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     # Can't import sagenb as it depends on sage and sage depends on sagenb
     - test -f $SP_DIR/sagenb/__init__.py                    # [unix]
